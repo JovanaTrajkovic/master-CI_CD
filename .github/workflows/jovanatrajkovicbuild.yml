@@ -29,3 +29,9 @@ jobs:
     - run: npm install --package-lock-only
     - run: npm ci
     - run: npm run build --if-present
+
+    - name: Publish Artifacts
+      uses: actions/upload-artifact@v4.3.1    
+      with:
+        name: binary-verzija1-windows-${{ matrix.node-version }}
+        path: build
